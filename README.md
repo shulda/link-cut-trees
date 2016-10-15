@@ -33,9 +33,9 @@ The project contains three files
 
 This file generates random inputs for the problem. It has a couple of command line parameters:
 
-`input_generator n m [forrest_coeff [tree_width_coeff [alter_structure]]]`
+`input_generator n m [forest_coeff [tree_width_coeff [alter_structure]]]`
 
-where `n` is the number of vertices in the forest, `m` is the number of queries. `forrest_coeff` (default value = `0.0003`) denotes the probability that a vertex >1 will have no parent (vertex 1 never has a parent). `tree_width_coeff` (default value = 10) determines the expected depth of the forest. Parent of vertex `i` is chosen as `parent[i] = rnd(i - tree_width_coeff, i-1)`. For `tree_width_coeff=1` it generates a path, for `tree_width_coeff=n` the expected depth is only logarithmical. Finally `alter_structure` is a flag whether to generate queries `a x y` and `r x y` (they are generated randomly and thus the depth of the trees becomes logarithmical quite fast).
+where `n` is the number of vertices in the forest, `m` is the number of queries. `forest_coeff` (default value = `0.0003`) denotes the probability that a vertex >1 will have no parent (vertex 1 never has a parent). `tree_width_coeff` (default value = 10) determines the expected depth of the forest. Parent of vertex `i` is chosen as `parent[i] = rnd(i - tree_width_coeff, i-1)`. For `tree_width_coeff=1` it generates a path, for `tree_width_coeff=n` the expected depth is only logarithmical. Finally `alter_structure` is a flag whether to generate queries `a x y` and `r x y` (they are generated randomly and thus the depth of the trees becomes logarithmical quite fast).
 
 ### `bruteforce.cpp`
 

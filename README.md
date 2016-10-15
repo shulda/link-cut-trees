@@ -20,7 +20,7 @@ We can always assume that the queries are valid (e.g. the edge being removed exi
 
 ### Input format
 
-On the first line on STDIN there are two integers `n and `m`, i.e. the number of vertices in the forest and the number of queries respectively.
+On the first line on STDIN there are two integers `n` and `m`, i.e. the number of vertices in the forest and the number of queries respectively.
 On the second line there are `n` integers -- the starting values of vertices `1, 2, ..., n`.
 On the third line there are `n` integers `p_1, p_2, ..., p_n`, each from the set `0, 1, ..., n`, where `p_i` is the number of the parent of vertex `i` (or 0 if `i` has no parent)
 Then on each of the following `m` lines there is a single query specified above.
@@ -32,7 +32,9 @@ The project contains three files
 ### `input_generator.cpp`
 
 This file generates random inputs for the problem. It has a couple of command line parameters:
+
 `input_generator n m [forrest_coeff [tree_width_coeff [alter_structure]]]`
+
 where `n` is the number of vertices in the forest, `m` is the number of queries. `forrest_coeff` (default value = `0.0003`) denotes the probability that a vertex >1 will have no parent (vertex 1 never has a parent). `tree_width_coeff` (default value = 10) determines the expected depth of the forest. Parent of vertex `i` is chosen as `parent[i] = rnd(i - tree_width_coeff, i-1)`. For `tree_width_coeff=1` it generates a path, for `tree_width_coeff=n` the expected depth is only logarithmical. Finally `alter_structure` is a flag whether to generate queries `a x y` and `r x y` (they are generated randomly and thus the depth of the trees becomes logarithmical quite fast).
 
 ### `bruteforce.cpp`
